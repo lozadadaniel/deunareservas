@@ -7,25 +7,7 @@
     <div class="form-group-inner">
     <div class="row">
         
-        <form action="{{route("categoria",['id'=> $id])}}" method="POST">
-            {{csrf_field()}}
-
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <label class="login2 pull-left pull-right-pro">Ciudad:  </label>
-                                                            
-       
-                                                                <div class="input-group custom-go-button">
-                                                                    <select class="form-control custom-select-value" name="city" tabindex="-1">
-                                                                            @foreach ($citys as $city)
-                                                                     <option value="{{$city->id}}">{{$city->name}}</option>
-                                                                @endforeach
-                                                                            
-                                                                        </select>
-                                                                    <span class="input-group-btn"><button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button></span>
-                                                                </div>
-                                                            </div>
-    
-                                     </form>
+        
                         <div class="container">
                 <div class="button-drop-style-one btn-warning-bg">
                                             <a href="{{ route('company.maps')}}" class="btn btn-custon-four btn-warning warning-btn-cl">Ver en mapa</a>

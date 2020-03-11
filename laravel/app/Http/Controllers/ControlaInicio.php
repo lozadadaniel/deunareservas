@@ -12,10 +12,7 @@ use App\User;
 
 class ControlaInicio extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
     public function destacados(){
         //Request $request
         //$request->user()->authorizaRoles('user');

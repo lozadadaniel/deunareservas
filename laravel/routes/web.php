@@ -45,16 +45,16 @@ Route::get('/callback', 'SocialController@callback')->name('callback');
 
 
 //Company
-Route::get('//avatar/{filename}', 'CompanyController@getImages')->name('company.avatar');
+Route::get('/avatar/{filename}', 'CompanyController@getImages')->name('company.avatar');
 Route::get('/company/services/{filename}', 'CompanyController@getIcon')->name('company.services');
 Route::get('/crear-reserva', 'ControlaInicio@reserva')->name('crear.reserva');
 Route::get('/like/{company_id}', 'LikeController@like')->name('like.save');
 Route::get('/dislike/{company_id}', 'LikeController@dislike')->name('like.delete');
 
-Route::get('/aliados/{nombre}', 'CompanyController@companyProfile')->name('company.profile'); 
+Route::get('/{nombre}', 'CompanyController@companyProfile')->name('company.profile'); 
 
 //Categoria
-Route::get('/categoria/{id}', 'CompanyController@category')->name('company.category');
+Route::get('categoria/{nombre}', 'CompanyController@category')->name('company.category');
 
 //nueva
 Route::post('/categoria/{id}', ['as' => 'categoria', 'uses' => 'CompanyController@category_city']);

@@ -13,10 +13,7 @@ use App\City;
 
 class CompanyController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
     
     
     public function getImages($filename){
@@ -28,14 +25,15 @@ class CompanyController extends Controller
         return new response($file, 200);
     }
 
-    public function category($id,Request $request){
+    public function category($nombre,Request $request){ 
 
-        $category = Category::find($id);
+        $nombre = str_replace("_", " ", $nombre);
+        $category = Category::where('name' ,$nombre)->first();
         $categorys = Category::orderBY('id','asc')->get();
         $citys  = City::orderBY('name','asc')->get();
         $idCity = $request->city;
         // dd($citys);
-        return view('company.category', compact('category','categorys','citys','idCity','id'));
+        return view('company.category', compact('category','categorys','citys','idCity','nombre'));
             // ['category' => $category],
             // ['categorys' => $categorys],
             // ['city'=>$city] );
@@ -57,7 +55,7 @@ class CompanyController extends Controller
         Cart::clear();
         $nombre = str_replace("_", " ", $nombre);
        
-        $company = Company::where('name' ,$nombre)->first();
+        $company = Company::where('nick' ,$nombre)->first();
         $categorys = Category::orderBY('id','asc')->get();
         // dd($company);
         return view('company.profile', 
