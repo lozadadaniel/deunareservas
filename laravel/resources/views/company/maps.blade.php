@@ -17,8 +17,11 @@
       lng: -73.118130,
     });
   </script>
-  
+   
   @foreach($companys as $company)
+  @php
+        $nombre = str_replace(" ", "_", $company->nick);
+@endphp
   @if($company->category_id == 1)
   <script type="text/javascript">
         $ (map.addMarker({
@@ -27,7 +30,7 @@
           title: 'Lima',
           icon: "{{ asset('img/restaurante.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->name])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.restaurantes',[$nombre])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -39,7 +42,7 @@
           title: 'Lima',
           icon: "{{ asset('img/bar.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.canchas',[$nombre])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -51,7 +54,7 @@
           title: 'Lima',
           icon: "{{ asset('img/cancha.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.canchas',[$nombre])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -63,7 +66,7 @@
           title: 'Lima',
           icon: "{{ asset('img/marcador.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.canchas',[$nombre])}}",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -75,7 +78,7 @@
           title: 'Lima',
           icon: "{{ asset('img/barber.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.canchas',[$nombre])}}",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -87,7 +90,7 @@
           title: 'Lima',
           icon: "{{ asset('img/salon.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.salones',[$nombre])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
@@ -99,7 +102,7 @@
           title: 'Lima',
           icon: "{{ asset('img/service.png') }}",
           infoWindow: {
-              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route("company.profile",[$company->id])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
+              content: '<p><strong>{{ $company->name}}</strong></p><br><center> <a href="{{ route('company.servicios',[$nombre])}}"><img src="{{ asset("img/reserva.png") }}"></a></center>'
             }
         }));
     </script>
