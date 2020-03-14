@@ -57,9 +57,21 @@
                                 </p>
                             </div>
                             @php
-        $nombre = str_replace(" ", "_", $company->name);
+        $nombre = str_replace(" ", "_", $company->nick);
 @endphp
-                            <div class="red_button "><a href="{{ route('company.profile',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                             @if ($company->category_id == '1')
+                            <div class="red_button "><a href="{{ route('company.restaurantes',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '3')
+                            <div class="red_button "><a href="{{ route('company.canchas',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '6')
+                            <div class="red_button "><a href="{{ route('company.salones',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '7')
+                            <div class="red_button "><a href="{{ route('company.servicios',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '8')
+                            <div class="red_button "><a href="{{ route('company.eventos',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @else
+
+                        @endif
 
 
                             
@@ -100,9 +112,21 @@
                                 </p>
                             </div>
                             @php
-        $nombre = str_replace(" ", "_", $company->name);
+        $nombre = str_replace(" ", "_", $company->nick);
 @endphp
-                            <div class="red_button "><a href="{{ route('company.profile',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                         @if ($company->category_id == '1')
+                            <div class="red_button "><a href="{{ route('company.restaurantes',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '3')
+                            <div class="red_button "><a href="{{ route('company.canchas',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '6')
+                            <div class="red_button "><a href="{{ route('company.salones',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '7')
+                            <div class="red_button "><a href="{{ route('company.servicios',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @elseif($company->category_id == '8')
+                            <div class="red_button "><a href="{{ route('company.eventos',[$nombre])}}" data-toggle="modal" >Reservar</a></div>
+                        @else
+
+                        @endif
 
 
                             

@@ -10,10 +10,11 @@ use Cart;
 use App\Category;
 use App\Company;
 use App\City;
+use App\Product;
 
 class CompanyController extends Controller
 {
-   
+    
     
     
     public function getImages($filename){
@@ -25,20 +26,20 @@ class CompanyController extends Controller
         return new response($file, 200);
     }
 
-    public function category($nombre,Request $request){ 
+    public function category($name,Request $request){
 
-        $nombre = str_replace("_", " ", $nombre);
-        $category = Category::where('name' ,$nombre)->first();
+        $name = str_replace("-", " ", $name);
+        $category = Category::where('name' ,$name)->first();
         $categorys = Category::orderBY('id','asc')->get();
         $citys  = City::orderBY('name','asc')->get();
         $idCity = $request->city;
         // dd($citys);
-        return view('company.category', compact('category','categorys','citys','idCity','nombre'));
+        return view('company.category', compact('category','categorys','citys','idCity','name'));
             // ['category' => $category],
             // ['categorys' => $categorys],
             // ['city'=>$city] );
     }
-
+ 
     public function category_city($id,Request $request){
 
         $category = Category::find($id);
@@ -54,12 +55,42 @@ class CompanyController extends Controller
     public function companyProfile($nombre){
         Cart::clear();
         $nombre = str_replace("_", " ", $nombre);
-       
+        
+        
         $company = Company::where('nick' ,$nombre)->first();
         $categorys = Category::orderBY('id','asc')->get();
+
         // dd($company);
         return view('company.profile', 
             ['company' => $company],
             ['categorys' => $categorys] );
     } 
+
+    public function restaurantes($nombre){
+        
+        Cart::clear();
+        $nombre = str_replace("-", " ", $nombre);
+       
+        $company = Company::where('nick' ,$nombre)->first();
+        $categorys = Category::find(1);
+        $categorias = Category::orderBY('id','asc')->get();
+        
+
+        return view('company.profile',compact('categorys','categorias','company'));
+    }
+
+     public function canchas($no){
+        
+        Cart::clear();
+        $no = str_replace("-", " ", $no);
+       
+        $company = Company::where('nick' ,$no)->first();
+        $categorys = Category::find(2);
+        $categorias = Category::orderBY('id','asc')->get();
+        
+
+        return view('company.profile',compact('categorys','categorias','company'));
+    }
+
+
 }

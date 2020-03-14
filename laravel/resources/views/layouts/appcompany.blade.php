@@ -158,7 +158,7 @@
                                    <span class="mini-click-non">Categorias</span>
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                @foreach($categorys as $category) 
+                                @foreach($categorias as $category) 
                                 <li><a title="Dashboard v.1" href="{{ route('company.category',[$category->id])}}"><span class="mini-sub-pro">{{ $category->name }}</span></a></li>
                                  @endforeach
                                 
@@ -333,7 +333,7 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Categorias<span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                 @foreach($categorys as $category) 
+                                                 @foreach($categorias as $category) 
                                 <li><a title="Dashboard v.1" href="{{ route('company.category',[$category->id])}}"><span class="mini-sub-pro">{{ $category->name }}</span></a></li>
                                  @endforeach
                                            </ul>
@@ -395,15 +395,7 @@
     <script src="{{ asset('js/datapicker/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('js/datapicker/datepicker-active.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
-    <script type="text/javascript">
-  $(function() {
-    $('#datetimepicker3').datetimepicker({
-      pickDate: false
-    });
-  });
-
-    
-</script>
+   
 
     
     

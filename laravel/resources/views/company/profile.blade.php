@@ -51,7 +51,9 @@
                                           <h2>Servicio</h2>
                                           @endif
                                           
+
                                             @foreach($company->category_products as $category_product)
+                                            @if ($category_product->activo)
                        <div class="panel-group edu-custon-design" id="accordion">
                                 <div class="panel ">
                                     <div class="panel-heading accordion-head">
@@ -102,6 +104,7 @@
                                     </div>
                                 </div>
                           </div>
+                          @endif
                         @endforeach
                         
                             @if ($company->con_motivo)
@@ -150,16 +153,27 @@
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                             <input type="text" class="form-control" value="" name="fecha">
                                         </div>
-                                    </div>
+                                    </div> 
                                     <div class="form-group data-custon-pick" id="data_2">
                                         <label>¿A que horas vendrás?</label>
                                         <div id="datetimepicker3" class="input-group">
                                 <span class="input-group-addon add-on">
                                   <i class="fa fa-clock-o"></i>
                                 </span>
-                                <input name="hora"  type="text" class="form-control" data-format="hh:mm:ss" type="text" value="18:00:00">
+                                <input name="hora"  type="text" class="form-control" data-format="hh:mm" type="text" >
                             </div>
                             </div>
+                             <script type="text/javascript">
+  $(function() {
+    $('#datetimepicker3').datetimepicker({
+      pickDate: false,
+      Format: 'H:i'
+      
+    });
+  });
+
+    
+</script>
                             @endif
                             @if ($company->con_decoracion)
                                <div class="form-group-inner">

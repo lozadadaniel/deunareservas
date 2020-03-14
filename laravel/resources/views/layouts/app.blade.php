@@ -153,7 +153,7 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li>
+                        <li> 
                             <a title="Landing Page" href="{{ route('index') }}" aria-expanded="false"><span class="educate-icon educate-star icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Explorar</span></a>
                         </li>
                         <li >
@@ -162,9 +162,13 @@
                                    <span class="mini-click-non">Categorias</span>
                                 </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                @foreach($categorys as $category) 
-                                <li><a title="Dashboard v.1" href="{{ route('company.category',[$category->id])}}"><span class="mini-sub-pro">{{ $category->name }}</span></a></li>
-                                 @endforeach
+                                 
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/restaurantes"><span class="mini-sub-pro">Restaurantes</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/canchas-sinteticas"><span class="mini-sub-pro">Canchas Sintéticas</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/salones-de-belleza"><span class="mini-sub-pro">Salones de Belleza</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/servicios"><span class="mini-sub-pro">Servicios</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/eventos"><span class="mini-sub-pro">Eventos</span></a></li>
+                                 
                                 
                             </ul>
                         </li>
@@ -336,10 +340,13 @@
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Categorias<span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            
                                             <ul class="collapse dropdown-header-top">
-                                                 @foreach($categorys as $category) 
-                                <li><a title="Dashboard v.1" href="{{ route('company.category',[$category->id])}}"><span class="mini-sub-pro">{{ $category->name }}</span></a></li>
-                                 @endforeach
+                                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/restaurantes"><span class="mini-sub-pro">Restaurantes</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/canchas-sinteticas"><span class="mini-sub-pro">Canchas Sintéticas</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/salones-de-belleza"><span class="mini-sub-pro">Salones de Belleza</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/servicios"><span class="mini-sub-pro">Servicios</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ route('index')}}/categoria/eventos"><span class="mini-sub-pro">Eventos</span></a></li>
                                            </ul>
                                         </li>
                                     </ul>
@@ -402,7 +409,8 @@
     <script type="text/javascript">
   $(function() {
     $('#datetimepicker3').datetimepicker({
-      pickDate: false
+      pickDate: false,
+      format: 'DD MMM YYYY hh:mm A'
     });
   });
 

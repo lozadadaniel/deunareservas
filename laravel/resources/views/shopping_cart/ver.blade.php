@@ -75,27 +75,18 @@
                                 {{ csrf_field() }}
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-select-list basic-ele-mg-t-10">
-                                        <strong>Nombre: </strong> {{ Auth::user()->name }} {{ Auth::user()->surname }}
-                                        <input type="hidden" name="name" value="{{ Auth::user()->name }}" class="form-control"  required>
+                                        <input type="text" name="name" class="form-control" placeholder="Nombre" required>
                                         
                                     </div>
                                 </div>
-                                @if(Auth::user()->email)
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="form-select-list basic-ele-mg-t-10">
-                                        <strong>Correo: </strong> {{ Auth::user()->email }}
-                                        <input type="hidden" name="correo" value="{{ Auth::user()->email }}" class="form-control"  required>
-                                        
-                                    </div>
-                                </div>
-                                @else
+                               
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-select-list basic-ele-mg-t-10">
                                         <input type="text" name="correo" class="form-control" placeholder="Correo" required>
                                         
                                     </div>
                                 </div>
-                                @endif
+                              
                                 
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 20px;">
                                     <div class="form-select-list basic-ele-mg-t-10">

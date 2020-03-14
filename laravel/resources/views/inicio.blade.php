@@ -53,17 +53,17 @@
       </div>
       </div>
   </div>
-</div>
+</div> 
 <p><br> </p>
 <div class="owl-carousel owl-theme">
-    <div class="item" style="width:200px"><a href="{{ route('company.category',1)}}"><img  alt="logo" src="{{ asset('categorias/restaurantes.png')}}"></a></div>
+    <div class="item" style="width:200px"><a href="{{ route('index')}}/categoria/restaurantes"><img  alt="logo" src="{{ asset('categorias/restaurantes.png')}}"></a></div>
     <!--<div class="item" style="width:200px"><a href="{{ route('company.category',2)}}"><img  alt="logo" src="{{ asset('categorias/bares.png')}}"></a></div>-->
-    <div class="item" style="width:200px"><a href="{{ route('company.category',3)}}"><img  alt="logo" src="{{ asset('categorias/canchas.png')}}"></a></div>
+    <div class="item" style="width:200px"><a href="{{ route('index')}}/categoria/canchas-sinteticas"><img  alt="logo" src="{{ asset('categorias/canchas.png')}}"></a></div>
     <!--<div class="item" style="width:200px"><a href="{{ route('company.category',4)}}"><img  alt="logo" src="{{ asset('categorias/entrete.png')}}"></a></div>-->
     <!--<div class="item" style="width:200px"><a href="{{ route('company.category',5)}}"><img  alt="logo" src="{{ asset('categorias/barberias.png')}}"></a></div>-->
-    <div class="item" style="width:200px"><a href="{{ route('company.category',6)}}"><img  alt="logo" src="{{ asset('categorias/salon.png')}}"></a></div>
-    <div class="item" style="width:200px"><a href="{{ route('company.category',7)}}"><img  alt="logo" src="{{ asset('categorias/servicios.png')}}"></a></div>
-    <div class="item" style="width:200px"><a href="{{ route('company.category',8)}}"><img  alt="logo" src="{{ asset('categorias/eventos.png')}}"></a></div>
+    <div class="item" style="width:200px"><a href="{{ route('index')}}/categoria/salones-de-belleza"><img  alt="logo" src="{{ asset('categorias/salon.png')}}"></a></div>
+    <div class="item" style="width:200px"><a href="{{ route('index')}}/categoria/servicios"><img  alt="logo" src="{{ asset('categorias/servicios.png')}}"></a></div>
+    <div class="item" style="width:200px"><a href="{{ route('index')}}/categoria/eventos"><img  alt="logo" src="{{ asset('categorias/eventos.png')}}"></a></div>
     </div>
 <!-- Destacados -->
 <div class="new_arrivals">
