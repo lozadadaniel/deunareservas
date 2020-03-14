@@ -1,14 +1,15 @@
 (function ($) {
  "use strict";
- 
+ 	var dateToday = new Date();
 	 $('#data_1 .input-group.date').datepicker({
+	 	startDate: dateToday,
 		todayBtn: "linked",
-		keyboardNavigation: false,
-		forceParse: false,
-		calendarWeeks: true,
+		
+		
 		autoclose: true
+		
 	});
-
+ 
 	$('#data_2 .input-group.date').datepicker({
 		startView: 1,
 		todayBtn: "linked",

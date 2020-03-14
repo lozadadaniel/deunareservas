@@ -149,12 +149,12 @@
                             
                                      <div class="form-group data-custon-pick" id="data_1">
                                         <label>¿Cuando vendrás?</label>
-                                        <div class="input-group date">
+                                        <div class="input-group date" >
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" class="form-control" value="" name="fecha">
+                                            <input type="text"  class="form-control" value="" name="fecha">
                                         </div>
                                     </div> 
-                                    <div class="form-group data-custon-pick" id="data_2">
+                                    <div class="form-group data-custon-pick" >
                                         <label>¿A que horas vendrás?</label>
                                         <div id="datetimepicker3" class="input-group">
                                 <span class="input-group-addon add-on">
@@ -171,7 +171,7 @@
       
     });
   });
-
+ 
     
 </script>
                             @endif
