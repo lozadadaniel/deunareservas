@@ -65,6 +65,19 @@ class CompanyController extends Controller
             ['company' => $company],
             ['categorys' => $categorys] );
     } 
+    public function companyProfile2($nombre){
+        Cart::clear();
+        $nombre = str_replace("_", " ", $nombre);
+        
+        
+        $company = Company::where('name' ,$nombre)->first();
+        $categorys = Category::orderBY('id','asc')->get();
+
+        // dd($company);
+        return view('company.profile', 
+            ['company' => $company],
+            ['categorys' => $categorys] );
+    } 
 
     public function restaurantes($nombre){
         

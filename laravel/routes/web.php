@@ -51,7 +51,7 @@ Route::get('/crear-reserva', 'ControlaInicio@reserva')->name('crear.reserva');
 Route::get('/like/{company_id}', 'LikeController@like')->name('like.save');
 Route::get('/dislike/{company_id}', 'LikeController@dislike')->name('like.delete');
 
-Route::get('/aliados/{nombre}', 'CompanyController@companyProfile')->name('company.profile'); 
+Route::get('/aliados/{nombre}', 'CompanyController@companyProfile2')->name('company.profile'); 
 
 //Categoria
 Route::get('/categoria/{name}', 'CompanyController@category')->name('company.category');
